@@ -8,15 +8,15 @@ package com.huotu.pm.repositories;
 
 import com.huotu.pm.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
-
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author 蒋才 Jiang Cai <luffy.ja at gmail.com>
  */
 @Repository
+//@Transactional
 //@RepositoryRestResource(collectionResourceRel = "application", path = "application")
 public interface UserRepository  extends JpaRepository<User, Long> {
     

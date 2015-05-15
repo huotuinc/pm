@@ -9,12 +9,23 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/huotu/pm/config/PMSecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/huotu/pm/config/ProductionConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/huotu/pm/config/RootConfig.java</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/config.xml</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspring/1.2-SNAPSHOT/libspring-1.2-20150512.083816-5.jar!/org/luffy/lib/libspring/config/JpaConfig.class</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspring/1.2-SNAPSHOT/libspring-1.2-20150512.083816-5.jar!/org/luffy/lib/libspring/config/MVCConfig.class</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspring/1.2-SNAPSHOT/libspring-1.2-20150512.083816-5.jar!/org/luffy/lib/libspring/config/SecurityConfig.class</file>
+          <file>file://$MAVEN_REPOSITORY$/org/luffy/lib/libspring/1.2-SNAPSHOT/libspring-1.2-20150512.083816-5.jar</file>
         </fileset>
       </configuration>
     </facet>
@@ -35,6 +46,8 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

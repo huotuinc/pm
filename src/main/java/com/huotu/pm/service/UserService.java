@@ -19,6 +19,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+//    @Transactional
     public void newUser(String username,String password){
         User u = new User();
         u.setUsername(username);

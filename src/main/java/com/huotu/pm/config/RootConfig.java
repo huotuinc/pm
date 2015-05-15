@@ -29,7 +29,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         {
 //            "classpath:org/luffy/wzqr/wzqrserver/config/root.xml",
 //            "classpath:org/luffy/wzqr/wzqrserver/config/jcaptcha.xml",
-            "WEB-INF/config.xml"
+//            "WEB-INF/config.xml"
         }
 )
 public class RootConfig {
