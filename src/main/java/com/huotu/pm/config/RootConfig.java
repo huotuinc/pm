@@ -23,8 +23,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Configuration
 @EnableJpaRepositories("com.huotu.pm.repositories")
-@Import({JpaConfig.class,SecurityConfig.class})//,WebSecurityConfigJava.class
-@ComponentScan("com.huotu.pm.beans")
+//@Import({JpaConfig.class,SecurityConfig.class})//,WebSecurityConfigJava.class
+@ComponentScan({"com.huotu.pm.beans","com.huotu.pm.entity","com.huotu.pm.service"})//
 @ImportResource(
         {
 //            "classpath:org/luffy/wzqr/wzqrserver/config/root.xml",
@@ -33,11 +33,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         }
 )
 public class RootConfig {
-    
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+//
+//    @Bean
+//    public PasswordEncoder passwordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
     
 //    @Bean
 //    public LuffyAuthenticationFilter luffyAuthenticationFilter(){

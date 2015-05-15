@@ -2,16 +2,12 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="huotupm_life" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.huotu.pm.entity.User</class>
-    <class>com.huotu.pm.entity.Resource</class>
-    <class>com.huotu.pm.entity.Module</class>
-    <class>com.huotu.pm.entity.Project</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/pm"/>
-      <property name="javax.persistence.jdbc.user" value="pm"/>
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.password" value="pm"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://rdseyqfryeyqfry.mysql.rds.aliyuncs.com:3306/db5j24ra5f04w762"/>
+      <property name="javax.persistence.jdbc.user" value="ide"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="ideide"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.luffy.lib:libspringtest:1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspringtest/1.2-SNAPSHOT/libspringtest-1.2-20150513.115338-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspringtest/1.2-SNAPSHOT/libspringtest-1.2-20150513.115338-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/luffy/lib/libspringtest/1.2-SNAPSHOT/libspringtest-1.2-20150513.115338-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
