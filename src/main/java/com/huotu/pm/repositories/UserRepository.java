@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author 蒋才 Jiang Cai <luffy.ja at gmail.com>
  */
 @Repository
-//@Transactional
+@Transactional
 //@RepositoryRestResource(collectionResourceRel = "application", path = "application")
 public interface UserRepository  extends JpaRepository<User, Long> {
     
@@ -27,5 +27,4 @@ public interface UserRepository  extends JpaRepository<User, Long> {
      * @return
      */
     User findByUsername(String name);
-    
 }

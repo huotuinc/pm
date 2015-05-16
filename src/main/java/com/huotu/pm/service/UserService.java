@@ -5,6 +5,7 @@ import com.huotu.pm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by CJ on 5/15/15.
@@ -19,7 +20,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-//    @Transactional
+    @Transactional
     public void newUser(String username,String password){
         User u = new User();
         u.setUsername(username);
