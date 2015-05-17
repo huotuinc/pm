@@ -9,6 +9,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import java.util.UUID;
 
@@ -23,6 +24,7 @@ import static org.junit.Assert.assertNotNull;
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
+@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
 @ContextConfiguration(loader = PMSpringContextLoader.class)
 public class UserServiceTest {
 

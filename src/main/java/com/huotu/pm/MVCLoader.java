@@ -1,5 +1,6 @@
 package com.huotu.pm;
 
+import com.huotu.pm.config.MVCConfig;
 import com.huotu.pm.config.PMSecurityConfig;
 import com.huotu.pm.config.ProductionConfig;
 import com.huotu.pm.config.RootConfig;
@@ -25,7 +26,7 @@ public class MVCLoader extends SimpleMVCLoader {
 
     @Override
     protected Class<?>[] getCoreRootConfigClasses() {
-        return new Class<?>[]{RootConfig.class};
+        return new Class<?>[]{RootConfig.class,MVCConfig.class};
     }
 
     @Override

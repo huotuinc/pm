@@ -16,13 +16,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.PrePersist;
+
 /**
  *
  * @author 蒋才 Jiang Cai <luffy.ja at gmail.com>
  */
 @Service("appService")
 public class AppService implements UserDetailsService,ApplicationListener<ContextRefreshedEvent> {
-    
+    @PrePersist
+    void prePersist(Object object) {
+        System.out.println("saved "+object);
+    }
+
     @Autowired
     private UserRepository userRepository;
     @Autowired
