@@ -1,7 +1,6 @@
 package com.huotu.pm;
 
 import com.huotu.pm.config.PMSecurityConfig;
-import com.huotu.pm.config.ProductionConfig;
 import com.huotu.pm.config.RootConfig;
 import org.luffy.lib.libspring.config.RuntimeConfig;
 import org.luffy.lib.libspring.config.SecurityConfig;
@@ -20,7 +19,7 @@ public class PMSpringContextLoader extends SpringContextLoader {
 
     @Override
     protected Class<? extends RuntimeConfig> runtimeConfig() {
-        return ProductionConfig.class;
+        return TestConfig.class;
     }
 
     @Override

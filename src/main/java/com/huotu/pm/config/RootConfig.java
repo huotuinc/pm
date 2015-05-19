@@ -6,15 +6,10 @@
 
 package com.huotu.pm.config;
 
-import org.luffy.lib.libspring.config.JpaConfig;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * 这个配置将是所有spring 公用的配置
@@ -22,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @author luffy
  */
 @Configuration
-@EnableJpaRepositories("com.huotu.pm.repositories")
+@Import(JpaConfig.class)
 //@Import({JpaConfig.class,SecurityConfig.class})//,WebSecurityConfigJava.class
 @ComponentScan({"com.huotu.pm.beans","com.huotu.pm.entity","com.huotu.pm.service"})//
 @ImportResource(

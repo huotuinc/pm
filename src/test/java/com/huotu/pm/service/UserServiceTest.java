@@ -5,6 +5,7 @@ import com.huotu.pm.repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,7 +25,7 @@ import static org.junit.Assert.assertNotNull;
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
-@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
+//@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
 @ContextConfiguration(loader = PMSpringContextLoader.class)
 public class UserServiceTest {
 
@@ -45,5 +46,7 @@ public class UserServiceTest {
         assertNotNull("没有增加相应的user", userRepository.findByUsername(username));
 
         userRepository.delete(userRepository.findByUsername(username));
+
+//        JpaRepositoryFactoryBean a;
     }
 }
