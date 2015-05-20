@@ -25,7 +25,6 @@ import static org.junit.Assert.assertNotNull;
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
-//@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
 @ContextConfiguration(loader = PMSpringContextLoader.class)
 public class UserServiceTest {
 

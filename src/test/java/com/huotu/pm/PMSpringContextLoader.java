@@ -1,9 +1,10 @@
 package com.huotu.pm;
 
+import com.huotu.pm.config.PMMVCConfig;
 import com.huotu.pm.config.PMSecurityConfig;
 import com.huotu.pm.config.RootConfig;
+import org.luffy.lib.libspring.config.LibSecurityConfig;
 import org.luffy.lib.libspring.config.RuntimeConfig;
-import org.luffy.lib.libspring.config.SecurityConfig;
 import org.luffy.lib.libspringtest.SpringContextLoader;
 
 /**
@@ -13,7 +14,12 @@ import org.luffy.lib.libspringtest.SpringContextLoader;
  */
 public class PMSpringContextLoader extends SpringContextLoader {
     @Override
-    protected Class<? extends SecurityConfig> securityConfig() {
+    protected boolean loadDefaultMVC() {
+        return false;
+    }
+
+    @Override
+    protected Class<? extends LibSecurityConfig> securityConfig() {
         return PMSecurityConfig.class;
     }
 
@@ -24,6 +30,6 @@ public class PMSpringContextLoader extends SpringContextLoader {
 
     @Override
     protected Class<?>[] getCoreRootConfigClasses() {
-        return new Class<?>[]{RootConfig.class};
+        return new Class<?>[]{RootConfig.class, PMMVCConfig.class};
     }
 }

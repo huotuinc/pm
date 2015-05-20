@@ -14,7 +14,7 @@ import org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect;
 public class TestConfig extends RuntimeConfig{
     @Override
     public boolean containerEnv() {
-        return false;
+        return true;
     }
 
     @Override

@@ -17,7 +17,7 @@ import org.springframework.context.annotation.ImportResource;
  * @author luffy
  */
 @Configuration
-@Import(JpaConfig.class)
+@Import(PMJpaConfig.class)
 //@Import({JpaConfig.class,SecurityConfig.class})//,WebSecurityConfigJava.class
 @ComponentScan({"com.huotu.pm.beans","com.huotu.pm.entity","com.huotu.pm.service"})//
 @ImportResource(

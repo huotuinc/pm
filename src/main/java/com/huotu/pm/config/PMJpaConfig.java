@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //Using DependsOn at the class level has no effect unless component-scanning is being used.
 @DependsOn("entityManagerFactory")
 @EnableJpaRepositories("com.huotu.pm.repositories")
-public class JpaConfig {
+public class PMJpaConfig {
 }
