@@ -53,7 +53,7 @@ public class DemoTest extends SpringWebTest{
         //bad password
         session  = (MockHttpSession) this.mockMvc.perform(post("/login").session(session)
                 .param("username", userName).param("password", password))
-                .andDo(print())
+//                .andDo(print())
 //                 .andExpect(status().isFound())
 //                 .andExpect(redirectedUrl("/loginPage?error"))
 //                 .andExpect(status().isUnauthorized())
@@ -84,7 +84,7 @@ public class DemoTest extends SpringWebTest{
 
     @Test
     @Rollback
-    public void justtest() throws Exception {
+    public void index() throws Exception {
         removeDemo();
 
         User u = new User();
@@ -96,11 +96,11 @@ public class DemoTest extends SpringWebTest{
 
         MockHttpSession session = loginAs("demo","demo");
 
-        mockMvc.perform(get("/endpoints")
+        mockMvc.perform(get("/")
         .session(session))
                 .andDo(print())
         .andExpect(status().isOk())
-        .andExpect(view().name("inner.endpoints"))
+        .andExpect(view().name("index"))
         ;
     }
 }

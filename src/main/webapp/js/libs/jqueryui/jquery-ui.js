@@ -442,7 +442,7 @@ $.widget = function( name, base, prototype ) {
 };
 
 $.widget.extend = function( target ) {
-	var input = slice.call( arguments, 1 ),
+	var input = slice.call( arguments, 1 ),datepicker
 		inputIndex = 0,
 		inputLength = input.length,
 		key,

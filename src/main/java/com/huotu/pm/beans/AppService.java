@@ -33,6 +33,7 @@ public class AppService implements UserDetailsService,ApplicationListener<Contex
     private UserRepository userRepository;
     @Autowired
     private UserService userService;
+    // spring.profiles.active in web.xml can set change profile
 
 
     @Override

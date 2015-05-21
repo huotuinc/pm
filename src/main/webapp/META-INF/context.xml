@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/pm"/>
+<Context antiJARLocking="true" path="/pm">
+    <Resource name="jdbc/pm" auth="Container" type="javax.sql.DataSource"
+              maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+              username="ide" password="ideide" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://rdseyqfryeyqfry.mysql.rds.aliyuncs.com:3306/db5j24ra5f04w762"/>
+
+    <Parameter name="spring.profiles.active" value="dev"
+               override="false"/>
+</Context>
