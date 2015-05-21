@@ -30,6 +30,6 @@ public class PMSpringContextLoader extends SpringContextLoader {
 
     @Override
     protected Class<?>[] getCoreRootConfigClasses() {
-        return new Class<?>[]{RootConfig.class, PMMVCConfig.class};
+        return new Class<?>[]{RootConfig.class};
     }
 }
