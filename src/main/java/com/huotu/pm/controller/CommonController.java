@@ -17,7 +17,7 @@ public class CommonController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping("/")
+    @RequestMapping({"","index.html"})
     public String index(Model model){
         model.addAttribute("users",userRepository.findAll());
         return "index";

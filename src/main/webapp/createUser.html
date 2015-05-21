@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>建立用户</title>
+    <link rel="stylesheet" href="js/libs/jquery-ui-1.11.4/jquery-ui.css"/>
+    <script src="js/libs/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+    <script src="js/libs/jquery-ui-1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+<h1>建立用户</h1>
+<form method="post" th:action="@{saveUser}" action="index.html">
+    <label>用户名</label>
+    <input type="text" name="username"/>
+    <label>密码</label>
+    <input type="password" name="password"/>
+    <input type="submit" title="保存"/>
+</form>
+<script>
+    $(function(){
+        $('input[type=submit]').button();
+    });
+</script>
+</body>
+</html>

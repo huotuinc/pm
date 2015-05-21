@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="js/libs/jqueryui/css/base/minified/jquery-ui.min.css"/>
-        <script src="js/libs/jquery/jquery.js"></script>
-        <script src="js/libs/jqueryui/jquery-ui.js"></script>
-    </head>
-    <body>
-        <h1>迷你资源分享</h1>
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="js/libs/jquery-ui-1.11.4/jquery-ui.css"/>
+    <script src="js/libs/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+    <script src="js/libs/jquery-ui-1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+<h1>迷你资源分享</h1>
 
-        <h2>人员管理</h2>
+<div id="accordion">
+    <h2>人员管理</h2>
 
-        <div>
-            <!--@thymesVar id="users" type="java.util.List<>"-->
-            <div th:each="user:${users}">
-                <span th:text="${user.username}"/>
-            </div>
+    <div>
+        <a name="createUser" href="createUser.html" th:href="@{/createUser.html}">新增</a>
+        <!--@thymesVar id="users" type="java.util.List<com.huotu.pm.entity.User>"-->
+        <div th:each="user:${users}" th:object="${user}">
+            <em th:text="*{username}">用户名称</em>&nbsp;<sub><a href="#" th:href="@{/deleteUser(id=*{id})}">删除</a></sub>
         </div>
+    </div>
 
-        <h2>资源管理</h2>
+    <h2>资源管理</h2>
+    <div>
 
-        <input type="text" name="date" id="date"/>
-        <script>
-            $(function() {
-                $('#date').datepicker();
-            });
-        </script>
-    </body>
+    </div>
+</div>
+<!--<input type="text" name="date" id="date"/>-->
+<script>
+    $(function () {
+//        $('#date').datepicker();
+
+        $('#accordion').accordion();
+
+        $('a[name=createUser]').button();
+    });
+</script>
+</body>
 </html>
