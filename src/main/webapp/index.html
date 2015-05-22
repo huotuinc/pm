@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Start Page</title>
+    <title>iMP</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="js/libs/jquery-ui-1.11.4/jquery-ui.css"/>
     <script src="js/libs/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
     <script src="js/libs/jquery-ui-1.11.4/jquery-ui.js"></script>
 </head>
 <body>
-<h1>迷你资源分享</h1>
+<h1>iMP</h1>
+
+<a name="createProject" href="createProject.html" th:href="@{/createProject.html}">新增项目</a>
 
 <div id="accordion">
     <h2>人员管理</h2>
@@ -21,19 +23,50 @@
         </div>
     </div>
 
-    <h2>资源管理</h2>
-    <div>
+    <!--@thymesVar id="projects" type="java.util.List<com.huotu.pm.entity.Project>"-->
+    <!--/*/<th:block th:each="project:${projects}" th:object="${project}">/*/-->
+        <h2 th:text="*{name}" title="2019-10-1 by 蒋才" th:title="*{createdTime + ' by ' + creator.username}">项目名称</h2>
 
-    </div>
+        <div>
+            <!--展示资源和添加资源的代码应该是共享的-->
+            <ol>
+                <li th:each="rs:*{resources}" th:object="${rs}">
+                    <dfn title="巴拉巴拉巴 2019-10-1 by 蒋才"
+                         th:title="*{description+' '+createdTime+' by '+creator.username}">资源名称</dfn>
+                    <span>资源</span>
+                </li>
+            </ol>
+
+
+            <sup><a name="createModule" href="createModule.html" th:href="@{/createModule.html(id=id)}">添加模块</a></sup>
+            <small th:if="*{modules.size()>0}">相关模块:</small>
+            <div th:each="rsHolder:${project.modules}" th:object="${rsHolder}">
+                <h4 th:text="*{name}" title="2019-10-1 by 蒋才" th:title="*{createdTime + ' by ' + creator.username}">
+                    模块名称</h4>
+                <ol>
+                    <li th:each="rs:*{resources}" th:object="${rs}">
+                        <dfn title="巴拉巴拉巴 2019-10-1 by 蒋才"
+                             th:title="*{description+' '+createdTime+' by '+creator.username}">资源名称</dfn>
+                        <span>资源</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    <!--/*/ </th:block> /*/-->
 </div>
 <!--<input type="text" name="date" id="date"/>-->
 <script>
     $(function () {
+
+        $(document).tooltip();
+
 //        $('#date').datepicker();
 
         $('#accordion').accordion();
 
         $('a[name=createUser]').button();
+        $('a[name=createProject]').button();
+        $('a[name=createModule]').button();
     });
 </script>
 </body>

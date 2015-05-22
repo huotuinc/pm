@@ -1,5 +1,6 @@
 package com.huotu.pm.controller;
 
+import com.huotu.pm.repositories.ProjectRepository;
 import com.huotu.pm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,13 @@ public class CommonController {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ProjectRepository projectRepository;
 
     @RequestMapping({"","index.html"})
     public String index(Model model){
         model.addAttribute("users",userRepository.findAll());
+        model.addAttribute("projects",projectRepository.findAll());
         return "index";
     }
 
